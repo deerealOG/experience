@@ -301,7 +301,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  padding: 0px;
+  padding-bottom: 50px;
   gap: 50px;
 
   position: absolute;
