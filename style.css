@@ -306,9 +306,11 @@ body {
 
   position: absolute;
   width: auto;
-  height: 1022px;
+  height: auto;
   left: 20px;
-  top: 200px;
+  top: 400px;
+
+  margin-top: 50px;
 }
 #category .title {
   display: flex;
@@ -335,6 +337,7 @@ body {
   line-height: 150%;
   color: #262262;
   height: 500px;
+  width: 80%;
 }
 aside {
   display: none;
@@ -557,6 +560,7 @@ aside {
     left: 30%;
     top: 180px;
     padding-bottom: 50px;
+    margin-top: 0;
   }
   #category .title {
     justify-content: flex-start;
