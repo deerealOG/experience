@@ -308,9 +308,7 @@ body {
   width: auto;
   height: auto;
   left: 20px;
-  top: 400px;
-
-  margin-top: 50px;
+  top: 200px;
 }
 #category .title {
   display: flex;
