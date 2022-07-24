@@ -372,11 +372,9 @@ aside {
     font-size: 1.2rem;
     line-height: 140%;
     color: #ffffff;
-    cursor: pointer;
+    background: #f37821;
   }
-  #expe:hover {
-    background: #f8c097;
-  }
+
   #skill {
     display: flex;
     flex-direction: row;
@@ -410,7 +408,10 @@ aside {
     font-size: 1.2rem;
     line-height: 140%;
     color: #ffffff;
-    background: #f37821;
+    cursor: pointer;
+  }
+  #cert:hover {
+    background: #f8c097;
   }
   #contact {
     display: flex;
