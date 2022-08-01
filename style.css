@@ -69,12 +69,11 @@ html {
 
 #navbar {
   background: #262262;
-  height: 87px;
+  height: 80px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  height: 87px;
   padding-right: 20px;
   padding-left: 10px;
   transition: all 0.7s ease-in;
@@ -82,15 +81,12 @@ html {
 
 #userdetails {
   position: absolute;
-  right: 5%;
+  right: 18%;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
   gap: 10px;
-}
-aside {
-  display: none;
 }
 
 #avatar {
@@ -123,7 +119,7 @@ aside {
   cursor: pointer;
 }
 #logo img {
-  height: 50px;
+  height: 3.375rem;
 }
 
 #hamburger {
@@ -132,8 +128,119 @@ aside {
 #desktop {
   display: none;
 }
+#toggle {
+  display: none;
+}
+
+/**
+  Hamburger
+**/
+.hamburger {
+  position: absolute;
+  top: 4em;
+  right: 5%;
+  margin-top: -45px;
+  width: 2.2em;
+  height: 40px;
+  z-index: 500;
+}
+
+.hamburger div {
+  position: relative;
+  top: -6px;
+  right: 5%;
+  width: 2.6em;
+  height: 6px;
+  border-radius: 3px;
+  background: #f37821;
+  margin-top: 8px;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+.nav {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: var(--overlay-color);
+  top: -100%;
+  left: 0%;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+  transform: scale(0);
+  z-index: 400;
+}
+.nav-wrapper {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+}
+.nav-wrapper nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+  margin-top: 50px;
+}
+.nav a {
+  font-family: "Poppins";
+  font-style: normal;
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: #ffffff;
+}
+/**
+Animations
+**/
+#toggle:checked + .hamburger {
+  position: fixed;
+}
+
+#toggle:checked + .hamburger .top-bun {
+  transform: rotate(-45deg);
+  margin-top: 25px;
+}
+#toggle:checked + .hamburger .bottom-bun {
+  opacity: 0;
+  transform: rotate(45deg);
+}
+#toggle:checked + .hamburger .meat {
+  transform: rotate(45deg);
+  margin-top: -6px;
+}
+
+#toggle:checked + .hamburger + .nav {
+  top: 0;
+  transform: scale(1);
+}
+
+/**
+Animations
+**/
+#toggle:checked + .hamburger .top-bun {
+  transform: rotate(-45deg);
+  margin-top: 25px;
+}
+#toggle:checked + .hamburger .bottom-bun {
+  opacity: 0;
+  transform: rotate(45deg);
+}
+#toggle:checked + .hamburger .meat {
+  transform: rotate(45deg);
+  margin-top: -6px;
+}
+
+#toggle:checked + .hamburger + .nav {
+  top: 0;
+  transform: scale(1);
+}
 .down {
   color: white;
+  display: none;
 }
 .caret {
   display: none;
@@ -141,8 +248,8 @@ aside {
 
 #dropDownCont {
   position: fixed;
-  top: 85px;
-  right: 10px;
+  top: 80px;
+  right: 0px;
   z-index: 100;
   background: #262262;
   width: auto;
@@ -187,7 +294,7 @@ aside {
   font-family: "Poppins";
   font-style: normal;
   font-weight: 700;
-  font-size: 20px;
+  font-size: 1.25rem;
   line-height: 140%;
   color: #ffffff;
   background: #f37821;
@@ -222,7 +329,7 @@ aside {
   align-items: center;
   text-align: center;
   display: none;
-  background: rgba(38, 34, 98, 0.8);
+  background: #f8893a;
   padding-bottom: 20px;
 }
 .side-navcont li {
@@ -246,43 +353,44 @@ aside {
   justify-content: center;
   align-items: flex-start;
   padding-bottom: 50px;
+  padding-left: 5%;
+  padding-right: 5%;
   gap: 50px;
-
-  position: relative;
-  height: auto;
-  top: 20vmax;
+  position: absolute;
+  top: 200px;
 }
 .category .title {
   display: flex;
   flex-direction: row;
   align-items: center;
   padding: 0px;
-  gap: 20px;
+  gap: 50px;
 }
-.category .title p {
+.category .title {
   font-family: "Poppins";
   font-style: normal;
   font-weight: 700;
-  font-size: 1rem;
+  font-size: 1.2rem;
   line-height: 140%;
   color: #f37821;
 }
 .category .desc {
   font-family: "Poppins";
   font-style: normal;
-  font-weight: 400;
+  font-weight: 600;
   font-size: 1rem;
   line-height: 150%;
   color: #262262;
 }
 
-aside {
-  display: none;
-}
 .iconify {
   cursor: pointer;
 }
-
+@media all and (min-width: 425px) {
+  #userdetails {
+    right: 15%;
+  }
+}
 @media all and (min-width: 500px) {
 }
 @media all and (min-width: 576px) {
@@ -295,14 +403,10 @@ aside {
 }
 
 @media (min-width: 768px) {
-  /* .dropdown {
-    display: none;
-  } */
   body {
     height: auto;
   }
   #navbar {
-    height: 100px;
     position: fixed;
     left: 0;
     top: 0;
@@ -313,142 +417,12 @@ aside {
     max-width: auto;
     height: 100%;
   }
-  #title {
-    display: none;
-  }
-  aside {
-    display: block;
-    position: fixed;
-    width: 200px;
-    height: 100vh;
-    left: 0px;
-    top: 0px;
-    background: rgba(38, 34, 98, 0.8);
-  }
-  #bigContainer {
-    position: fixed;
-    width: 200px;
-    height: auto;
-    left: 0px;
-    top: 120px;
-    display: flex;
-    flex-direction: column;
-    padding: 30px 0px;
-  }
-  #bigContainer span {
-    margin: 10px 0px;
-    transition: all 0.5s ease-in;
-  }
-  #about {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 0px 20px;
-    width: 200px;
-    height: 40px;
-    font-family: "Poppins";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 1.2rem;
-    line-height: 140%;
-    color: #ffffff;
-    cursor: pointer;
-  }
-  #about:hover {
-    background: #f8c097;
-  }
-  #expe {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 0px 20px;
-    width: 200px;
-    height: 40px;
-    font-family: "Poppins";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 1.2rem;
-    line-height: 140%;
-    color: #ffffff;
-    background: #f37821;
-  }
 
-  #skill {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 0px 20px;
-    width: 200px;
-    height: 40px;
-    font-family: "Poppins";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 1.2rem;
-    line-height: 140%;
-    color: #ffffff;
-    cursor: pointer;
-  }
-  #skill:hover {
-    background: #f8c097;
-  }
-  #cert {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 0px 20px;
-    width: 200px;
-    height: 40px;
-    font-family: "Poppins";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 1.2rem;
-    line-height: 140%;
-    color: #ffffff;
-    cursor: pointer;
-  }
-  #cert:hover {
-    background: #f8c097;
-  }
-  #contact {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 0px 20px;
-    width: 200px;
-    height: 40px;
-    font-family: "Poppins";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 1.2rem;
-    line-height: 140%;
-    color: #ffffff;
-    cursor: pointer;
-  }
-  #contact:hover {
-    background: #f8c097;
-  }
   #cont {
     width: 70%;
   }
-  .category {
-    left: 23%;
-    width: auto;
-  }
-  .category .title p {
-    width: 400px;
-    font-family: "Poppins";
-    font-style: normal;
-    font-weight: 700;
-    font-size: 1.2rem;
-    line-height: 140%;
-  }
-  .menu-wrap {
-    display: none;
+  #userdetails {
+    right: 12%;
   }
 }
 @media all and (min-width: 992px) {
@@ -502,23 +476,15 @@ aside {
   }
 
   #navbar {
-    height: 100px;
     z-index: 10;
     padding-left: 20px;
   }
 
-  #logo {
-    padding: 20px;
-  }
-  #logo img {
-    height: 60px;
-  }
-
-  #userdetails .notification {
-    display: flex;
-  }
   #hamburger {
     display: none;
+  }
+  #userdetails {
+    right: 5vw;
   }
   .down {
     color: white;
@@ -526,31 +492,8 @@ aside {
   .down {
     display: flex;
   }
-  aside {
-    width: 300px;
-    position: fixed;
-    top: 0;
-  }
-  #bigContainer {
-    width: auto;
-    gap: 20px;
-  }
-  #bigContainer span {
-    font-family: "Poppins";
-    font-style: normal;
-    font-weight: 700;
-    font-size: 20px;
-    line-height: 140%;
-    width: 300px;
-    padding: 20px;
-    margin-bottom: 10px;
-  }
 
-  .category {
-    top: 35vmin;
-    right: 10%;
-  }
-  .category .title p {
+  .category .title {
     font-family: "Poppins";
     font-style: normal;
     font-weight: 700;
@@ -561,12 +504,12 @@ aside {
   .category .desc {
     font-family: "Poppins";
     font-style: normal;
-    font-weight: 300;
+    font-weight: 600;
     font-size: 1rem;
     line-height: 150%;
   }
-  #dropDownCont {
-    right: 10px;
+  .hamburger {
+    display: none;
   }
 }
 @media all and (min-width: 1200px) {
