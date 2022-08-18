@@ -69,7 +69,7 @@ html {
 
 #navbar {
   background: #262262;
-  height: 80px;
+  height: 60px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -99,7 +99,7 @@ html {
 }
 #avatar img {
   height: auto;
-  width: 50px;
+  width: 40px;
 }
 #username {
   padding: 0;
@@ -119,12 +119,10 @@ html {
   cursor: pointer;
 }
 #logo img {
-  height: 3.375rem;
+  height: 40px;
 }
 
-#hamburger {
-  color: #ffffff;
-}
+
 #desktop {
   display: none;
 }
@@ -138,7 +136,7 @@ html {
 .hamburger {
   position: absolute;
   top: 4em;
-  right: 5%;
+  right: 2%;
   margin-top: -45px;
   width: 2.2em;
   height: 40px;
@@ -147,10 +145,10 @@ html {
 
 .hamburger div {
   position: relative;
-  top: -6px;
+  top: -0.8em;
   right: 5%;
-  width: 2.6em;
-  height: 6px;
+  width: 2em;
+  height: 4px;
   border-radius: 3px;
   background: #f37821;
   margin-top: 8px;
@@ -210,7 +208,7 @@ Animations
 }
 #toggle:checked + .hamburger .meat {
   transform: rotate(45deg);
-  margin-top: -6px;
+  margin-top: -4px;
 }
 
 #toggle:checked + .hamburger + .nav {
@@ -231,7 +229,7 @@ Animations
 }
 #toggle:checked + .hamburger .meat {
   transform: rotate(45deg);
-  margin-top: -6px;
+  margin-top: -4px;
 }
 
 #toggle:checked + .hamburger + .nav {
@@ -257,7 +255,7 @@ Animations
 }
 #dropDownCont {
   position: fixed;
-  top: 85px;
+  top: 80px;
   right: 0px;
   z-index: 100;
   background: #262262;
@@ -290,6 +288,13 @@ Animations
 .show {
   display: flex;
 }
+.dropdown, .down {
+  transition: all .5s ease;
+}
+.rotate {
+  transform: rotate(180deg);
+  transition: all .5s ease;
+}
 #title {
   font-family: "Poppins";
   font-style: normal;
@@ -302,7 +307,7 @@ Animations
   width: 100%;
   height: 40px;
   left: 0px;
-  top: 133px;
+  top: 100px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -413,10 +418,7 @@ Animations
     z-index: 10;
   }
 
-  #avatar img {
-    max-width: auto;
-    height: 100%;
-  }
+  
 
   #cont {
     width: 70%;
@@ -431,6 +433,7 @@ Animations
   }
   #navbar {
     position: fixed;
+    height: 80px;
   }
   #navcta {
     display: none;
@@ -492,6 +495,9 @@ Animations
   .down {
     display: flex;
   }
+  .nav {
+    display: none;
+  }
 
   .category .title {
     font-family: "Poppins";
@@ -510,6 +516,12 @@ Animations
   }
   .hamburger {
     display: none;
+  }
+  #logo img {
+    height: 50px;
+  }
+  #title {
+    top: 120px;
   }
 }
 @media all and (min-width: 1200px) {
